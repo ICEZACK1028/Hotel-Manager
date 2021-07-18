@@ -1,0 +1,45 @@
+<h1 class="title">Registrarse</h1>
+<div class="container" style="margin-bottom: 50px; margin-top: 50px">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-5">
+      <form>
+        <div class="mb-3">
+          <label for="firstname" class="form-label">Nombres:</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" #firstname="ngModel"
+            [(ngModel)]="user.firstname">
+        </div>
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Apellidos:</label>
+          <input type="text" class="form-control" id="lastname" name="lastname" #lastname="ngModel"
+            [(ngModel)]="user.lastname">
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Dirección:</label>
+          <input type="text" class="form-control" id="address" name="address" #address="ngModel"
+            [(ngModel)]="user.address">
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Fecha de nacimiento:</label><br>
+          <input type="date" class="form-control" id="birthday" name="birthday"
+          #birthday="ngModel" [(ngModel)]="user.birthday" min="2002-01-01" max="{{Today}}" style="display: inline-block;
+          width: 100%;">
+        </div>
+        <div class="mb-3">
+          <label for="user" class="form-label">Usuario:</label>
+          <input type="text" class="form-control" id="user" name="username" #username="ngModel"
+            [(ngModel)]="user.username">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="text" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="user.email">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password:</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password" #password="ngModel"
+            [(ngModel)]="user.password">
+        </div>
+        <button type="submit" class="btn btn-primary" routerLink="login"  (click)="register()">Registrarse</button>
+      </form>
+    </div>
+  </div>
+</div>

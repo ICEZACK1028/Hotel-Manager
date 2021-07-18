@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand mb-0 h1" href="#"> <img src="assets/img/Icono 3.png" alt="" width="40px"> Trouvaille </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/hotels" routerLinkActive="active" href="#">Hoteles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="_userService.getProfile().rol !== 'Usuario'" routerLink="/users" routerLinkActive="active" href="#">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Habitaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="_userService.getProfile() === null" routerLink="/register" routerLinkActive="active" href="#">Registrarse</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false" *ngIf="_userService.getProfile()">
+            <img *ngIf="_userService.getProfile().image" [src]="_userService.getProfile().image" alt="Avatar" class="user-image">
+            <img *ngIf="_userService.getProfile().image === null " src="assets/img/profile.png" alt="Avatar" class="user-image">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+            <!-- <li><a class="dropdown-item">{{_userService.getProfile().firstname}} | {{_userService.getProfile().username}}</a></li> -->
+            <li><a class="dropdown-item" routerLink="profile">Ver perfil</a></li>
+            <li><a class="dropdown-item" href="#">Ver historial</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" (click)="logOut()">Cerrar sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

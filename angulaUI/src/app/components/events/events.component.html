@@ -1,0 +1,14 @@
+<!-- Los hoteles para el rol usuario -->
+<h1 class="title">Eventos</h1>
+<div class="container" *ngIf="_userService.getProfile().rol ==='Usuario'"  >
+  <div class="card" *ngFor="let event of eventList">
+      <img src="assets/img/ciudad-maderas-MXbM1NrRqtI-unsplash.jpg">
+      <h4>{{event.name}}</h4>
+      <p><strong>Descripción:</strong> {{event.description}}</p>
+      <p><strong>Fecha:</strong> {{event.date}}</p>
+      <a href="#" class="btn btn-primary">Ver más detalles</a>
+  </div>
+</div><br>
+
+  <!-- *ngFor="let fac of facturaModelGet; index as i" -->
+  <!-- *ngIf="fac.precio != 0 -->

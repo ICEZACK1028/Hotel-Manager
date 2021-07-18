@@ -1,0 +1,13 @@
+<h1 class="title">Habitaciones</h1>
+
+<div class="container" *ngIf="_userService.getProfile().rol ==='Usuario'" >
+  <div class="card" *ngFor="let room of bedroomsList">
+      <img src="assets/img/jonathan-borba-hG-bLB7VXDA-unsplash.jpg">
+      <h4>{{room.name}}</h4>
+      <p><strong>Detalles:</strong> {{room.description}}</p>
+      <p><strong>Precio/noche:</strong> Q{{room.price}}</p>
+      <a href="#" class="btn btn-primary">Reservar</a>
+  </div>
+</div><br>
+
+<!-- Para la vista del administrador -->
